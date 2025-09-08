@@ -1,5 +1,5 @@
 NOTA_MINIMA= 7.0
-NOTA_RECUPERACAO = 5.0
+NOTA_RECUPERACAO = 4.0
 
 nota= float(input("Que nota você tirou? "))
 
