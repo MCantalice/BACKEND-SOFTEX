@@ -1,0 +1,22 @@
+{% extends 'website/_layouts/base.html' %}
+
+
+{% block title %}
+Editar Funcionário
+{% endblock %}
+
+{% block content %}
+<h1>Editar Funcionário</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    <p>{{ form.nome.label_tag }}<br>{{ form.nome }}</p>
+    <p>{{ form.sobrenome.label_tag }}<br>{{ form.sobrenome }}</p>
+    <p>{{ form.cpf.label_tag }}<br>{{ form.cpf }}</p>
+    <p>{{ form.tempo_de_servico.label_tag }}<br>{{ form.tempo_de_servico }}</p>
+    <p>{{ form.remuneracao.label_tag }}<br>{{ form.remuneracao }}</p>
+
+    <button type="submit">Salvar Alterações</button>
+</form>
+{% endblock %}

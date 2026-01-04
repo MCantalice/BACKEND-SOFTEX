@@ -1,0 +1,21 @@
+{% extends 'website/_layouts/base.html' %}
+
+
+{% block title %}
+Excluir Funcionário
+{% endblock %}
+
+{% block content %}
+<h1>Excluir Funcionário</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <p>
+        Tem certeza que deseja excluir
+        <strong>{{ funcionario.nome }} {{ funcionario.sobrenome }}</strong>?
+    </p>
+
+    <button type="submit">Sim, excluir</button>
+    <a href="{% url 'website:lista_funcionarios' %}">Cancelar</a>
+</form>
+{% endblock %}
