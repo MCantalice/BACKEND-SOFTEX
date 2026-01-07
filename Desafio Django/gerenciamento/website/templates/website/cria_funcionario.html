@@ -1,0 +1,56 @@
+{% extends 'website/_layouts/base.html' %}
+
+{% block title %}
+Cadastrar Funcionário
+{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Cadastrar Funcionário</h1>
+
+<form method="post" class="card p-4 shadow-sm">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        {{ form.nome.label_tag }}
+        <div class="mt-1">
+            {{ form.nome }}
+        </div>
+    </div>
+
+    <div class="mb-3">
+        {{ form.sobrenome.label_tag }}
+        <div class="mt-1">
+            {{ form.sobrenome }}
+        </div>
+    </div>
+
+    <div class="mb-3">
+        {{ form.cpf.label_tag }}
+        <div class="mt-1">
+            {{ form.cpf }}
+        </div>
+    </div>
+
+    <div class="mb-3">
+        {{ form.tempo_de_servico.label_tag }}
+        <div class="mt-1">
+            {{ form.tempo_de_servico }}
+        </div>
+    </div>
+
+    <div class="mb-3">
+        {{ form.remuneracao.label_tag }}
+        <div class="mt-1">
+            {{ form.remuneracao }}
+        </div>
+    </div>
+
+    <button class="btn btn-success" type="submit">
+        Salvar
+    </button>
+
+    <a class="btn btn-link" href="{% url 'website:lista_funcionarios' %}">
+        Voltar
+    </a>
+</form>
+{% endblock %}
